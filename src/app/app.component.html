@@ -1,3 +1,87 @@
-<h1>
-  {{title}}
-</h1>
+<md-toolbar class="sh_toolbar-color">
+
+
+  <div class="sh-toolbar">
+
+    <h1>{{'MYSTORE' | translate}}</h1>
+
+
+    <span class="sh-md-select">
+          <md-select placeholder="Lang" [(ngModel)]="currentLang"  #drinkControl="ngModel" class="sh-md-select">
+          <md-option *ngFor="let language of languages" [value]="language.value" (click)="changeLanguage(language)">
+            {{ language.name }}
+          </md-option>
+        </md-select>
+           
+            <a (click)=authService.login() *ngIf="!authService.loggedIn()">{{"SIGNIN" | translate}}</a>
+        
+           
+            <a (click)=authService.logout() *ngIf="authService.loggedIn()">{{"SIGNOUT" | translate}}</a>
+         </span>
+
+  </div>
+</md-toolbar>
+<div class="sh-container">
+  <md-sidenav-container class="demo-sidenav-container">
+
+    <div class="demo-sidenav-content">
+      <h4>{{"BROWSE"}}</h4>
+      <sh-menu [categories]='categories'></sh-menu>
+    </div>
+  </md-sidenav-container>
+  <div #root="$implicit" dir="ltr" class="sh-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+
+<!--<md-card class="demo-card demo-basic">
+ 
+  <md-card-content>
+   <sh-menu [menuItems]='categories'></sh-menu>
+  </md-card-content>
+</md-card>-->
+
+
+
+
+
+
+
+<!--<md-sidenav-container class="sh-root" fullscreen>
+
+  <md-sidenav #start opened mode="side">
+ 
+    <sh-menu [menuItems]='categories'></sh-menu>
+  </md-sidenav>
+  <div>-->
+<!--<md-toolbar class="sh_toolbar-color">
+
+     
+      <div class="sh-toolbar">
+        
+        <h1>{{'MYSTORE' | translate}}</h1>
+        
+       
+       
+       <span class="sh-md-select">
+          <md-select placeholder="Lang" [(ngModel)]="currentLang"  #drinkControl="ngModel" class="sh-md-select">
+          <md-option *ngFor="let language of languages" [value]="language.value" (click)="changeLanguage(language)">
+            {{ language.name }}
+          </md-option>
+        </md-select>
+           
+            <a (click)=authService.login() *ngIf="!authService.loggedIn()">{{"SIGNIN" | translate}}</a>
+        
+           
+            <a (click)=authService.logout() *ngIf="authService.loggedIn()">{{"SIGNOUT" | translate}}</a>
+         </span>
+       
+      </div>
+    </md-toolbar>-->
+
+<!--<div #root="$implicit" dir="ltr" class="sh-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</md-sidenav-container>-->

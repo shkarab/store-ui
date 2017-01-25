@@ -10,3 +10,5 @@ if (environment.production) {
 }
 
 platformBrowserDynamic().bootstrapModule(AppModule);
+//change port
+//ng serve --host 0.0.0.0 --port 4201 --live-reload-port 49153

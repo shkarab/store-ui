@@ -1,0 +1,22 @@
+
+<li class="al-sidebar-list-item"  >
+<a class="al-sidebar-list-link" [routerLink]="['/categories', menuItem.name]">
+  <i class="material-icons sh-menu-icon">{{ menuItem.icon}}</i>
+   <span>{{ menuItem.name}} </span>
+</a>
+</li>
+
+<!--<li class="al-sidebar-list-item" *ngIf="menuItem.children" (click)="onToggleSubMenu($event, menuItem)">
+<a class="al-sidebar-list-link"  >
+  <i class="material-icons sh-menu-icon">{{ menuItem.menu.icon}}</i>
+   <span>{{ menuItem.menu.title}} </span>
+ 
+</a>
+</li>-->
+
+
+<!--<ul class="al-sidebar-list" *ngIf="menuItem.children"  [hidden]="!menuItem.menu.expanded">
+  <sh-menu-item [menuItem]="subItem"  *ngFor="let subItem of menuItem.children"></sh-menu-item>
+</ul>-->
+
+
