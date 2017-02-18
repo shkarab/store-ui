@@ -1,0 +1,44 @@
+.product-cards{
+  
+   padding: 20px;
+    .category-nav{
+             md-card{
+                 padding: 10px;
+                   .ul-nav{
+                       display:flex;
+                       flex-direction: row;
+                       list-style-type: none;
+                        flex-wrap:wrap;
+                        .nav-icon{
+                            font-size:10px;
+                            color:#BDBDBD;
+                            padding: 4px;
+                        }
+                    }
+                  
+             }
+             
+    }
+    .main-products-card{
+        .products{
+            display: flex;
+            flex-direction: row;
+            flex-wrap:wrap;
+             padding: 10px;
+           
+            .product-card{
+               padding: 10px;
+            }
+        
+        }
+    }
+}
+
+.ul-nav{
+            flex:display;
+            flex-direction: row;
+            list-style-type: none;
+            flex-wrap:wrap;
+      }
+
+

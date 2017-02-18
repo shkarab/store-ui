@@ -1,0 +1,28 @@
+<md-card class="signup">
+  <md-toolbar color="primary">Sign up</md-toolbar>
+  <md-card-content>
+    <form novalidate (ngSubmit)="onSubmit(userForm)" [formGroup]="userForm">
+      <p>
+      <md-input-container style="width: 100%">
+        <input required  md-input placeholder="Your full name" formControlName="name">
+        <md-hint *ngIf="userForm.get('name').touched && userForm.get('name').hasError('required')" [ngStyle]="{'color': 'red'}" align="start"> Name is required</md-hint>  
+         <md-hint *ngIf="userForm.get('name').touched && userForm.get('name').hasError('minlength')" [ngStyle]="{'color': 'red'}" align="start"> Minimum of 2 characters</md-hint>  
+      </md-input-container>
+      </p>
+     <p>
+      <md-input-container style="width: 100%">
+        <input required md-input placeholder="Your email address" formControlName="email">
+          <md-hint *ngIf="userForm.get('email').touched && userForm.get('email').hasError('required')" [ngStyle]="{'color': 'red'}" align="start"> Email is required</md-hint>  
+      </md-input-container>
+    </p>
+    <p>
+      <md-input-container style="width: 100%">
+        <input required type="password" md-input placeholder="Your password" formControlName="password">
+          <md-hint *ngIf="userForm.get('password').touched && userForm.get('password').hasError('required')" [ngStyle]="{'color': 'red'}" align="start"> Password is required</md-hint>  
+      </md-input-container>
+     </p>
+      <button style="width: 100%" type="submit" md-raised-button [disabled]="userForm.invalid" color="accent">Sign up</button>
+
+    </form>
+  </md-card-content>
+</md-card>

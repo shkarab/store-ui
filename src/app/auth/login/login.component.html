@@ -1,0 +1,38 @@
+<md-card class="login">
+  <md-toolbar color="primary">Login</md-toolbar>
+  
+  <md-card-content>
+   
+   <div class="social-buttons">
+        <button  type="submit" md-raised-button class="btn-facebook">Facebook</button>
+        <div class="social-buttons-group">
+          <button  type="submit" md-raised-button class="btn-google">Google</button>
+
+          <button  type="submit" md-raised-button class="btn-twitter">Twitter</button>
+        </div>
+     
+    </div>
+    <form novalidate (ngSubmit)="onSubmit(loginForm)" [formGroup]="loginForm">
+
+      <p>
+        <md-input-container style="width: 100%">
+          <input required md-input placeholder="Your email address" formControlName="email">
+          <md-hint *ngIf="loginForm.get('email').touched && loginForm.get('email').hasError('required')" [ngStyle]="{'color': 'red'}"
+            align="start"> Email is required</md-hint>
+        </md-input-container>
+      </p>
+      <p>
+        <md-input-container style="width: 100%">
+          <input required type="password" md-input placeholder="Your password" formControlName="password">
+          <md-hint *ngIf="loginForm.get('password').touched && loginForm.get('password').hasError('required')" [ngStyle]="{'color': 'red'}"
+            align="start"> Password is required</md-hint>
+        </md-input-container>
+      </p>
+      <button style="width: 100%" type="submit" md-raised-button [disabled]="loginForm.invalid" color="accent">Login</button>
+      <div class="register-part">
+
+        <a routerLink="/register">New to Store? Sign up now</a>
+      </div>
+    </form>
+  </md-card-content>
+</md-card>

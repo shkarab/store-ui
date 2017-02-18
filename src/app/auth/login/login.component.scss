@@ -1,0 +1,36 @@
+.login{
+ max-width: 30%;
+  margin: auto;
+  margin-top: 30px;
+  .register-part{
+  display: flex;
+  justify-content: center;
+  margin-top:20px;
+  a{
+    opacity: 0.5;
+  }
+  }
+  .social-buttons{
+    margin-top:15px;
+    .btn-facebook{
+      color:white;
+      background-color: #01579b;
+      width: 100%
+    }
+    .social-buttons-group{
+      margin-top:10px;
+      display: flex;
+      justify-content: space-between;
+    
+      .btn-google{
+          width: 47%;
+        color:red;
+      }
+       .btn-twitter{
+           width: 47%;
+        background-color:#039be5;
+        color:white;
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+<div class="main">
+  <app-header></app-header>
+  <div class="main-container">
+
+    <router-outlet></router-outlet>
+
+  </div>
+  <app-footer></app-footer>
+</div>
+<!--<md-sidenav #start class="nav-left">
+    <div class="header">
+      <span>{{"BROWSE"}}</span>
+    </div>
+    <md-nav-list>
+      <a *ngFor="let menuItem of categories" md-list-item (click)="start.close()" [routerLink]="['/product/categories', menuItem]">
+         {{ menuItem}} 
+      </a>
+      <hr>
+    </md-nav-list>
+
+  </md-sidenav>-->
+
+<!--<div class="main">
+    <div class="main-header">
+      <md-toolbar color="accent">
+        <button md-icon-button (click)="start.open()">
+        <md-icon class="md-24" >menu</md-icon>
+      </button>
+        <span class="main-title">{{'MYSTORE' | translate}}</span>
+        <span class="main-fill-remaining"></span>
+        <span class="login-button">
+           
+       </span>
+      
+      </md-toolbar>
+    </div>
+
+    <div class="main-container">
+
+      <router-outlet></router-outlet>
+
+    </div>
+  </div>-->

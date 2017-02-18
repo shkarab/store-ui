@@ -1,9 +1,12 @@
-import {Routes} from "@angular/router";
-import { CategoriesComponent } from './categories/categories.component';
-import { ProductComponent } from './product/product.component';
-export const appRoutes:Routes=[
-   {path: '', component: ProductComponent},
-    { path: 'categories/:name', component: CategoriesComponent }
+import { Routes } from "@angular/router";
+// import { CategoriesComponent } from './product/categories/categories.component';
 
+
+export const appRoutes: Routes = [
+    // { path: '', redirectTo: '/product', pathMatch: 'full' },
+     { path: 'product', loadChildren: 'app/product/product.module#ProductModule' }
+    // {path: '', component: ProductComponent},
+    //    { path: 'categories/:name', component: CategoriesComponent },
+    //    { path: 'product/:id', component: ProductComponent }
 
 ]

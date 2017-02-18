@@ -1,5 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~https://fonts.googleapis.com/icon?family=Material+Icons';
 @import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
-@import '~ng2-material/ng2-material.css';
-@import '~ng2-material/font/font.css';
+@import '~https://fonts.googleapis.com/icon?family=Material+Icons';
+/*@import '~ng2-material/ng2-material.css';
+@import '~ng2-material/font/font.css';*/
+html,
+body {
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+}

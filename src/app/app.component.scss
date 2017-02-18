@@ -1,129 +1,49 @@
-body {
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
+md-sidenav-container {
 
-  // Helps fonts on OSX looks more consistent with other systems
-  // Isn't currently in button styles due to performance concerns
-  * {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+
+}
+.main {
+ 
+  display: flex;
+  flex-direction: column;
+  height:100%;
+
+
+.main-header {
+
+  .main-title {
+
   }
-
-  md-sidenav {
-    min-width: 15%;
-
-    [md-button] {
-      width: 100%;
-      position: relative;
-      bottom: 0;
-      margin: 24px 0;
-    }
+  .main-fill-remaining {
+    flex: 1 1 auto;
   }
-
-  .sh-content {
-    padding: 32px;
-  }
-
-  .sh_toolbar-color{
-    background: black;
-    color:rgba(255,255,255,.87);
-  }
-  md-toolbar {
-    
-    md-icon {
-      cursor: pointer;
-    }
-
-    .sh-toolbar {
-      display: flex;
-      justify-content: space-between;
-      padding:5px;
-      width: 100%;
-    }
-  }
-
-  h1 {
-    font-size: 20px;
-  }
-  .sh-nav-list{
-    background: black;
-    a {
-        color:rgba(255,255,255,.87);
-    }
+ .login-button{
+   a {
+     font-size:15px;
+   }
+ 
+ }
+}
+ .main-container{
+   flex: 1 1 auto;
+    flex-direction: column;
+    position: relative;
+   overflow-y:auto; 
+   height:100%;
    
   }
-.sh-md-select {
-    display: inline-block;
-    outline: 0;
-      display: flex;
-    justify-content: space-between;
-    align-items: center;
-  //  background-color: rgba(255,255,255,.87);
-  .md-select-trigger {
-  
-    height: 30px;
-    min-width: 112px;
-    cursor: pointer;
-    position: relative;
-    box-sizing: border-box;
 }
-.md-select-trigger {
-    color:rgba(255,255,255,.87);
-    border-bottom: 1px solid rgba(255,255,255,.87);
-}
-.md-select-value{
- color:rgba(255,255,255,.87);
-  position: absolute;
-    overflow-x: hidden;
-    left: 0;
-    top: 6px;
-}
-.md-select-arrow {
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid;
-    margin: 0 4px;
-}
-.md-select-arrow {
-    color:rgba(255,255,255,.87);
-}
-
-}
-
-.sh-md-select:focus:not(.md-select-disabled) .md-select-arrow {
-    color:rgba(255,255,255,.87);
-}
-
-// .sh-md-select-trigger {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     height: 30px;
-//     min-width: 112px;
-//     cursor: pointer;
-//     position: relative;
-//     box-sizing: border-box;
-//      color:rgba(255,255,255,.87);
-
-
-// }
-}
-
-.demo-sidenav-container {
-  border: 3px solid white;
-  width:200px;
-
-  .md-sidenav-focus-trap > .cdk-focus-trap-content {
-    padding: 10px;
+.nav-left {
+ background-color: #319736;
+  //flex:0 0 auto;
+  width:300px;
+  .header{
+    display:flex;
+    color:#CBD242;
+    justify-content: center;
+     padding:5px;
   }
 }
 
-.demo-sidenav-content {
-  padding: 15px;
-}
 
-.sh-container{
-  display:flex;
-  justify-content: flex-start;
-}
+ 

@@ -1,9 +1,9 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { TranslateService } from 'ng2-translate';
 import { FormControl } from '@angular/forms';
-import { AuthService } from './shared/auth.service';
-import { HomeService } from './shared/home.service';
-import { Category } from './shared/Category';
+import { ProductService } from './product/product.service';
+import { Category } from './product/shared/Category';
+
 
 @Component({
   selector: 'app-root',
@@ -13,40 +13,53 @@ import { Category } from './shared/Category';
   
 })
 export class AppComponent {
-  categories: Category[]
+  categories: Category[];
   languages = [];
   currentLang: string;
-  //currentLang:Object;
-  constructor(private translate: TranslateService, private authService: AuthService, private _homeService: HomeService) {
-    translate.addLangs(["en", "fa"]);
-    translate.setDefaultLang('en');
+   isDarkTheme:boolean;
 
-    let browserLang = translate.getBrowserLang();
-    translate.use(browserLang.match(/en|fa/) ? browserLang : 'en');
+  constructor(private translate: TranslateService, private _homeService: ProductService) {
+    // translate.addLangs(["en", "fa"]);
+    // translate.setDefaultLang('en');
+
+    // let browserLang = translate.getBrowserLang();
+    // translate.use(browserLang.match(/en|fa/) ? browserLang : 'en');
 
   }
 
   ngOnInit() {
-    this.getCategories();
+// this.isDarkTheme=false;
+//     //get left side categories
+//     this.getCategories();
 
-    this.languages = [
-      { name: "English", value: "en" },
-      { name: "Persian", value: "fa" }
-    ]
+//     this.languages = [
+//       { name: "English", value: "en" },
+//       { name: "Persian", value: "fa" }
+//     ]
 
-
-  }
-
-
-  getCategories() {
-    this._homeService.getCategories().subscribe(res => this.categories = res);
-  }
-  changeLanguage(lang) {
-
-    console.log("currentLang", lang);
-    this.translate.use(lang.value);
 
   }
+
+
+//getting all of main categories
+  // getCategories() {
+    
+  //   this._homeService.getCategoryByName("%2F").subscribe(res =>
+  //   {
+      
+  //      this.categories =  res.children;
+      
+  //   }
+  //   );
+  // }
+
+  //is used to changing languages
+  // changeLanguage(lang) {
+
+  //   console.log("currentLang", lang);
+  //   this.translate.use(lang.value);
+
+  // }
 
 
 }
