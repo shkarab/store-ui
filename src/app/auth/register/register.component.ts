@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from './../model/user';
 import { AuthService } from './../auth.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -12,7 +12,7 @@ export class RegisterComponent implements OnInit {
 userForm:FormGroup;
 
 
-  constructor(private authService: AuthService,private fb: FormBuilder) { }
+  constructor(private authService: AuthService,private fb: FormBuilder, private router: Router) { }
 
   ngOnInit() {
     this.userForm = this.fb.group({
@@ -26,6 +26,7 @@ userForm:FormGroup;
     console.log(value, valid);
     this.authService.register(value).subscribe(res => {
       console.log('res',res);
+       this.router.navigate(['/']);
     });
   }
 

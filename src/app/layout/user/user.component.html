@@ -1,4 +1,48 @@
-<div *ngIf="!isAuth">
-  <button md-button routerLink="/signup" routerLinkActive="active">Join Store</button>
-  <button md-button routerLink="/login" routerLinkActive="active">Log In </button>
+<div  *ngIf="!(isLogined())">
+  <button md-button routerLink="/register" routerLinkActive="active">Join Store</button>
+  <button md-button routerLink="/login" routerLinkActive="active" >Log In </button>
+</div>
+
+
+<div *ngIf="isLogined()"  (click)="getUserInfo()">
+  <button md-button class="border" [mdMenuTriggerFor]="posXMenu" aria-label="Open x-positioned menu"> 
+          <i class="material-icons">person</i>
+         You
+          <i class="material-icons">arrow_drop_down</i>
+  </button>
+  <md-menu x-position="before" #posXMenu="mdMenu" >
+    <md-list *ngIf="user">
+      <a class="pointer">
+        <md-list-item>
+          <img md-list-avatar src='../../assets/images/user/{{user.image}}' alt="Image of {{user.name}}">
+          <div class="column">
+            <h2 md-line class="h">{{user.name}}</h2>
+            <p class="p-detail">{{user.name}} </p>
+          </div>
+        </md-list-item>
+      </a>
+      <md-divider></md-divider>
+      <a class="pointer">
+        <md-list-item>
+          <p md-line class="p"> Setting </p>
+        </md-list-item>
+      </a>
+      <a class="pointer">
+        <md-list-item>
+          <p md-line class="p"> About Store </p>
+        </md-list-item>
+      </a>
+      <a class="pointer">
+        <md-list-item>
+          <p md-line class="p"> Contact Us </p>
+        </md-list-item>
+      </a>
+      <md-divider></md-divider>
+      <a class="pointer">
+        <md-list-item (click)="logout()">
+          <p md-line class="p"> Log Out </p>
+        </md-list-item>
+      </a>
+    </md-list>
+  </md-menu>
 </div>
