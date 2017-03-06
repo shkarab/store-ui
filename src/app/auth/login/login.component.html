@@ -1,16 +1,20 @@
 <md-card class="login">
   <md-toolbar color="primary">Login</md-toolbar>
-  
-  <md-card-content>
-   
-   <div class="social-buttons">
-        <button  type="submit" md-raised-button class="btn-facebook">Facebook</button>
-        <div class="social-buttons-group">
-          <button  type="submit" md-raised-button class="btn-google">Google</button>
 
-          <button  type="submit" md-raised-button class="btn-twitter">Twitter</button>
-        </div>
-     
+  <md-card-content>
+
+    <div class="social-buttons">
+      <!--<div class="btn-facebook"><a href="http://localhost:3001/auth/facebook?returnTo={{location}}">facebook</a></div>-->
+      <!--<button  type="submit" md-raised-button class="btn-facebook" (click)="loginWithFacebook()">Facebook</button>-->
+      <button (click)="facebookLogin()" class="btn btn-block btn-social btn-facebook">
+          <span class="fa fa-facebook"></span> Sign in with Facebook
+      </button>
+      <div class="social-buttons-group">
+        <button type="submit" md-raised-button class="btn-google">Google</button>
+
+        <button type="submit" md-raised-button class="btn-twitter">Twitter</button>
+      </div>
+
     </div>
     <form novalidate (ngSubmit)="onSubmit(loginForm)" [formGroup]="loginForm">
 

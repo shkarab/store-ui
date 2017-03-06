@@ -7,37 +7,27 @@ import 'rxjs/Rx'
 import { Observable } from 'rxjs/Observable';
 import {Location} from '@angular/common';
 import 'rxjs/add/operator/catch';
-interface ProductObject{
-  results:Product[],
-  total:Number,
-  options:Object
 
-}
 @Injectable()
 export class ProductService {
-bread:string;
-    constructor(private http: Http, private location: Location) { 
-        this.bread="";
+
+    constructor(private http: Http) { 
+
     }
 
 
     //is used to get all of categories
     getCategories(): Observable<Category[]> {
-        return this.http.get("http://localhost:3000/api/category/").map(res => res.json());
+        return this.http.get("http://localhost:3000/api/category").map(res => res.json());
     }
 
-    //is used to get sub categories
-    getCategoryByName(name: string): Observable<Category> {
-       
-       return this.http.get(`http://localhost:3000/api/category?idpath=${name}`).map(res => res.json());
-      
-    }
+    
     
   
     //is used to get specific products with paging 
-    getProducts(start:Number,count:Number,category:String): Observable<ProductObject> {
+    getProducts(): Observable<any> {
     
-        return this.http.get(`http://localhost:3000/api/product/getProducts/${category}/${start}/${count}`).map(res => res.json());
+        return this.http.get(`http://localhost:3000/api/product`).map(res => res.json());
     }
 
     getProductById(id: number) {

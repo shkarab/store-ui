@@ -1,13 +1,10 @@
-export interface Category {
-  _id: string,
-  name: string,
-  description: string,
-  category: string,
-  icon: string,
-  selected: boolean,
-  expanded: boolean,
-  children: Category[],
-  parent: string
 
+export class Category {
+    id: String;
+    updatedOn: string;
+    name: string;
+    slug: string;
+    isActive: boolean;
+    children: string[];
+    ancestors: string[];
 }
-

@@ -8,13 +8,15 @@ export class UnAuthGuardService implements CanActivate {
 
   constructor(private unAuthService: AuthService, private router: Router) {}
 
-  canActivate() {
+ canActivate(): boolean {
    
     if (this.unAuthService.isLogined()) {
-      this.router.navigate(['product']);
+     this.router.navigate(['login']);
       return false;
     }
     return true;
   }
 
 }
+ 
+    

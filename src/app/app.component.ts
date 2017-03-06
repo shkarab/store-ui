@@ -3,7 +3,7 @@ import { TranslateService } from 'ng2-translate';
 import { FormControl } from '@angular/forms';
 import { ProductService } from './product/product.service';
 import { Category } from './product/shared/Category';
-
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +18,7 @@ export class AppComponent {
   currentLang: string;
    isDarkTheme:boolean;
 
-  constructor(private translate: TranslateService, private _homeService: ProductService) {
+  constructor(private translate: TranslateService,public authService: AuthService) {
     // translate.addLangs(["en", "fa"]);
     // translate.setDefaultLang('en');
 

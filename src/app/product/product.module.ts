@@ -8,11 +8,12 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { RouterModule } from "@angular/router";
 import { GalleryComponent } from './product/gallery/gallery.component';
 import { ImageService } from './product/gallery/image.service';
+import { ProductsComponent } from './products/products.component';
 // import {ProductService} from './product.service';
 
 @NgModule({
   imports:      [ SharedModule,RouterModule.forChild(productRoutes)],
-  declarations: [ ProductComponent, ProductCardComponent, CategoriesComponent, GalleryComponent],
+  declarations: [ ProductComponent, ProductCardComponent, CategoriesComponent, GalleryComponent, ProductsComponent],
   exports:      [ ProductComponent, ProductCardComponent, CategoriesComponent ],
   providers:    [ ImageService ]
 })

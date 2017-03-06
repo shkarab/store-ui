@@ -3,8 +3,8 @@ import { Routes } from "@angular/router";
 
 
 export const appRoutes: Routes = [
-    // { path: '', redirectTo: '/product', pathMatch: 'full' },
-     { path: 'product', loadChildren: 'app/product/product.module#ProductModule' }
+      { path: '', redirectTo: '/products', pathMatch: 'full' },
+     { path: '', loadChildren: 'app/product/product.module#ProductModule' }
     // {path: '', component: ProductComponent},
     //    { path: 'categories/:name', component: CategoriesComponent },
     //    { path: 'product/:id', component: ProductComponent }

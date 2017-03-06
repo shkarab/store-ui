@@ -1,14 +1,8 @@
-export interface Product {
-           
-          images : string[],
-          description : string,
-          price : Number,
-          currency : String,
-          manufacturer : String,
-          name:String,
-          numberofitems :Number,
-          title : String,
-          category : String
-    
-}
 
+export class Product {
+    id: String;
+    title: string;
+    price: number;
+    description: string;
+    categories: string[];
+}

@@ -1,26 +1,19 @@
 <div class="product-cards">
     <div class="category-nav">
         <md-card >
-                <ul class="ul-nav" >
+                <!--<ul class="ul-nav" >
                     <li [routerLink]="['/product/categories', bread]"  *ngFor="let bread of breads">{{bread}}
                     <span class="nav-icon">></span></li>
                 </ul>
             
-            <md-divider></md-divider>
+            <md-divider></md-divider>-->
             <ul class="ul-nav">
-                <li *ngFor="let menuItem of subCategories"   [routerLink]="['/product/categories', menuItem]">{{menuItem}}
+                <li *ngFor="let category of categories" >{{category.name}}
                  <span class="nav-icon">|</span>
                  </li>
 
             </ul>
         </md-card>
     </div>
-    <div class="main-products-card" *ngIf="productObject">
-        <div class="products">
-           
-                <product-card class="product-card" *ngFor="let product of productObject.results | paginate: {id: 'server', itemsPerPage: itemPerPage, currentPage: currentPage, totalItems: productObject.total }" [product]="product"></product-card>
-          
-        </div>
-        <pagination-controls (pageChange)="getProducts($event)" id="server"></pagination-controls>
-    </div>
+   
 </div>

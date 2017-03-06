@@ -7,9 +7,9 @@ import { RegisterComponent } from './register/register.component';
 
 
 const routes: Routes = [
-    { path: 'register', component: RegisterComponent, canActivate: [UnAuthGuardService] },
-    { path: 'login', component: LoginComponent, canActivate: [UnAuthGuardService] },
-  
+    { path: 'register', component: RegisterComponent },
+    { path: 'login', component: LoginComponent},
+     
 ];
 
 @NgModule({
